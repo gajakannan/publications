@@ -12,6 +12,8 @@ The book can be downloaded in PDF or EPUB format from the [latest release](https
 
 There is also a [Leanpub page](https://leanpub.com/metapatterns) with testimonials and detailed table of contents, and the original (outdated) [Medium series](https://medium.com/itnext/the-list-of-architectural-metapatterns-ed64d8ba125d).
 
+Introductory slides are available for [download](<ArchitecturalMetapatterns/Patterns of Patterns.pdf>) or [reading online](https://speakerdeck.com/denyspoltorak/patterns-of-patterns-and-why-we-need-them).
+
 ## Other Publications
 
 [Introduction to Software Architecture with Actors](./IntroductionToSoftwareArchitectureWithActors/README.md). _[ITNEXT](https://medium.com/itnext/introduction-to-software-architecture-with-actors-part-1-89de6000e0d3)_, 2023.
