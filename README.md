@@ -12,7 +12,7 @@ The book can be downloaded in PDF or EPUB format from the [latest release](https
 
 There is also a [Leanpub page](https://leanpub.com/metapatterns) with testimonials and detailed table of contents, and the original (outdated) [Medium series](https://medium.com/itnext/the-list-of-architectural-metapatterns-ed64d8ba125d).
 
-Introductory slides are available for [download](<ArchitecturalMetapatterns/Slides/Patterns of Patterns.pdf>) or [reading online](https://speakerdeck.com/denyspoltorak/patterns-of-patterns-and-why-we-need-them).
+Introductory slides are available for [download](<ArchitecturalMetapatterns/Slides>) or [reading online](https://speakerdeck.com/denyspoltorak).
 
 ## Other Publications
 
