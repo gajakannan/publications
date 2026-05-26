@@ -207,6 +207,7 @@ There are a couple of troubles with the Calibre's output:
     - Edit the EPUB.
     - Find the paragraph which does not look good in the viewer.
     - Edit its `<span>` class, in my case `s-t5`. I had to change `line-height` from 1.2 to 1.4 for Oswald font to be displayed correctly.
+- You may also need to edit the table of contents in the editor. It's the top item of the `Tools` menu.
 - Colors of the cover image may be strongly distorted due to the JPEG compression:
     - Edit the EPUB.
     - In the file browser panel scroll down to the Images section. There should be the cover file at the end of it. Right-click it and `Replace ... with file ...`. Choose the original cover image.
