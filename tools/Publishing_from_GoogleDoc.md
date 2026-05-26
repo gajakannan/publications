@@ -152,6 +152,8 @@ Now you need to create the cover (printout of your title page) for your EPUB. Th
 - KISS: Make a screenshot of your title page in Google Docs or LibreOffice Writer.
 - The knightly path: Extract it from the PDF file generated in the previous section. Assuming you are on Linux, run `pdftoppm -singlefile -png YourBook.pdf > Cover.png`
 
+> NOTE: The cover may contain white pixels on the right side if the cover image's dimensions did not perfectly match the page dimensions. In that case you will have to crop the resulting PNG file, for example `convert Cover.png -crop 1240x1755+0+0 CroppedCover.png` where 1240 and 1755 are the width and height of the resulting image, and 0s are the coordinates of the top left corner of the area to crop.
+
 ### Create the EPUB
 
 You will need Calibre. Install it.
@@ -191,7 +193,25 @@ There are a couple of troubles with the Calibre's output:
     - Install Sigil.
     - Open the EPUB with Sigil.
     - Find ` class="calibre">` and replace it with `>` throughout the EPUB contents (`All HTML Files`).
-- Lists are not well-aligned. Fixing that requires knowledge of CSS.
+- Lists are not well-aligned. Fixing that requires knowledge of CSS:
+    - Edit the EPUB (right-click on the EPUB in the main Calibre window and choose `Edit EPUB format` or call the Calibre's EPUB editor from the file explorer.
+    - Find a page with a list (or a nested list if you use them).
+    - Click on the text of a list item in the preview panel. Its HTML code will become highlighted in the XHTML editor.
+    - Check which class its `<p>` (paragraph with text) element uses. In my case the top-level list is  `class="p-p1"` while the nested list items are of `class="p-p10"`. You will have to fix both of them.
+    - Open `stylesheet.css` in the file browser panel.
+    - Edit the definitions of the classes used with the list items. I had `text-indent: -0.25in; margin: 0 0 0 0.5in;` and `text-indent: -0.25in; margin: 0 0 0 0.75in;`. Set everything to zero: `text-indent: 0; margin: 0 0 0 0;`
+    - The preview should look much better now.
+    - Repeat for any misaligned page elements.
+    - Save the EPUB document.
+- Fonts don't fit in their lines, resulting in cropped letters. This is reproducible only in the Ebook viewer, not in Calibre Editor:
+    - Edit the EPUB.
+    - Find the paragraph which does not look good in the viewer.
+    - Edit its `<span>` class, in my case `s-t5`. I had to change `line-height` from 1.2 to 1.4 for Oswald font to be displayed correctly.
+- Colors of the cover image may be strongly distorted due to the JPEG compression:
+    - Edit the EPUB.
+    - In the file browser panel scroll down to the Images section. There should be the cover file at the end of it. Right-click it and `Replace ... with file ...`. Choose the original cover image.
+    - Save the EPUB.
+    - > Please note that replacing the cover image should be the last action to take because opening an EPUB file with Calibre editor recompresses its cover.
 
 ## Publish the book
 
